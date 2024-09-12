@@ -23,10 +23,18 @@ class PageController extends Controller
         return view('contacts');
     }
 
-
+    // funzione per tutti i treni
     public function trains(){
 
         $trains= Train::all();
+
+        return view('trains', compact('trains'));
+    }
+
+    // funzione per filtro
+    public function filteredTrains(){
+
+        $trains= Train::where('company', '=', 'Trenitalia')->get();
 
         return view('trains', compact('trains'));
     }
