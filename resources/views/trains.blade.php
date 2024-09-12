@@ -32,8 +32,10 @@
                         <td>{{ $train->arrival_time }}</td>
                         <td>{{ $train->train_code }}</td>
                         <td>{{ $train->train_carriage }}</td>
-                        <td>{{ $train->on_time }}</td>
-                        <td>{{ $train->deleted }}</td>
+
+                        <td>{{ $train->on_time === 1 ? 'in orario' : 'in ritardo' }}</td>
+
+                        <td>{{ $train->deleted === 0 ? 'no' : 'si' }}</td>
                     </tr>
                 @endforeach
 
